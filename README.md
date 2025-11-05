@@ -10,14 +10,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # permissions required by google-github-actions/auth@v1, a dependency of integration-os/google-artifact-registry-action@v2
+    # permissions required by google-github-actions/auth@v1, a dependency of picahq/google-artifact-registry-action@v2
     permissions:
       contents: read
       id-token: write
 
     steps:
       - uses: actions/checkout@v3
-      - uses: integration-os/google-artifact-registry-action@v2
+      - uses: picahq/google-artifact-registry-action@v2
         with:
           image: us-docker.pkg.dev/integrationos/docker-oss/my-service:v1
           service_account: github-actions@integrationos.iam.gserviceaccount.com
